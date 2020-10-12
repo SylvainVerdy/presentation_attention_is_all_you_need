@@ -7,4 +7,4 @@
  - Launch presentation into folder reveal.js
 	
 		npm start 
- My presentation are into the file "index.html"
+ Edit presentation into the file "index.html"
