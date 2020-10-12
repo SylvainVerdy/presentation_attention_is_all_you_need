@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<link rel="stylesheet" href="css/style.css">
+
+		<div class="reveal">
+			<div class="slides" style="background-color:blueviolet">
+						<link rel="stylesheet" href="css/style.css">
+
+				<section>
+						<h2>
+							Introduction to Transformers	 
+						</h2>
+						<img src="./images/meme_jack_attention.png" width="50%">
+						<h4> "Attention is all you need"</h4>
+						<div style="top: 90%; margin-top: 0%; margin-right: 0%;">
+							<p style="font-size: 80%; text-align: justify;"> Presented by Sylvain Verdy</p>
+						</div>
+						
+				</section>
+
+				<section style="text-align: justify;">
+					<h5 style="text-align: center;  margin-bottom: 1%;">
+						Table of contents
+					</h5>
+					<br>
+					<ul style="text-align: justify; font-size: 80%; margin-bottom: 40%;">
+						<li>	
+							Words Embeddings
+						</li>
+						<li>
+							BERT (Bidirectional Encoder Representations from Transformers)
+						</li>
+						<li>
+							LSTM Architecture
+						</li>
+						<li>
+							Seq-2-Seq Architecture
+						</li>
+						<li>
+							Attention mechanism explained
+						</li>
+						<li>
+							Transformer Architecture
+							<ul>
+								<li>
+									Positional encoding
+								</li>
+								<li>
+									Encoder layers
+								</li>
+								<li>
+									Scale dot product attention
+								</li>
+								<li>
+									Decoder layers
+								</li>
+							</ul>
+						</li>
+						<br>
+						
+					</ul>
+					
+				</section>
+				
+				<section>
+					<section style="text-align: justify;">
+						<h4 style="margin-top: 0%; margin-right: 40%;">
+							Words Embeddings:
+						</h4>
+						<h6 style="margin-right: 70%; font-size: 80%;">
+							Word2Vec
+						</h6>
+						<p style=" font-size: 80%;">
+							Combined by two techniques (Cbow and Skip Gram)
+						</p>
+						<br>
+						<img src="./images/skip_cbow.PNG" style="display: block; margin-left: auto; margin-right: auto;" width="60%">
+					
+					</section>
+					
+					<section style="text-align: justify;">
+						<h4 style="margin-top: 0%; margin-right: 40%;">
+							Skip-Gram:
+						</h4>
+						<p style="font-size: 70%;">
+							Learn words representation by training a neural network to predict the context from a word.
+						</p>
+						<div style="display: block; margin-left: auto; margin-right: auto;">
+							<img src="./images/skip_ex1.PNG" style= "display: block; margin-left: auto; margin-right: auto;" width="50%">	
+							<p style="font-size: 70%;">
+								Use context window parameters to predict context of target word.
+								For example, choose the word "royal", and choose a size of the window (size=2).
+								We have to keep t-2 words and t+2.  Words used in the context are: ["is", "the", "king"].
+							</p>
+
+							
+						</div>
+								
+					</section>
+
+					<section style="text-align: center;">
+
+						<h6> SKIP GRAM Architecture</h6>
+						<img src="./images/skip_archi.png"> 
+					</section>
+					<section style="text-align: center;">
+
+						<h6> SKIP GRAM demonstration</h6>
+						<img src="./images/skip_gram_results.PNG" width="80%"> 
+					</section>
+
+
+				</section>
+				<section>
+					<section>
+						<h6 style="margin-top: 0%; font-size: 80%;">
+							BERT (Bidirectional Encoder Representations from Transformers)
+						</h6>
+						<p style="text-align: justify; font-size: 70%;">
+							First of the famous transformers models. 
+							Trained on 2.5 Billion of words (Wikipedia) and other 800 millions words of a corpus.
+						</p>
+						<img src="./images/architecture_bert.PNG" width="50%">
+					</section>
+				</section>
+				<section>	
+					<section>
+
+						<h6 style="margin-top: 0%; font-size: 80%;">
+							LSTM architecture
+						</h6>
+					</section>
+					<section>
+						<img src="./images/lstm_architecture.PNG">
+						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h6>
+							Seq-2-Seq Architecture
+						</h6>
+					</section>
+					<section>
+						<img src="./images/seq2seq_archi.PNG">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h6>
+							Attention mechanism explained
+						</h6>
+
+						<img src="./images/sentence-example-attention.png">
+					</section>
+					<section>
+						<h6>
+							Integrate attention into Seq-2-Seq Architecture
+						</h6>
+						<img src="images/Seq2Seq_Attention_archi.PNG">
+					</section>
+
+					<section>
+						<h6>
+							Attention module
+						</h6>
+						<img src="images/module_attention.PNG" width="80%">
+						<h6>
+							Attention for what?
+						</h6>
+						<p>
+							- Help to memorize long sequence of sentences.
+						</p>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h6>
+							Transformer Architecture
+						</h6>
+						<p>
+							"Attention is all you need" (Vaswani, et al., 2017)
+						</p>	
+					</section>
+					<section>
+						<h6>
+							Transformer
+						</h6>
+						<img src="./images/transformers_architecture.PNG">
+					</section>
+					<section>
+						<h6>
+							Positional encoding
+						</h6>
+						<p style="text-align: justify; font-size: 70%;"> - Coding position of words to add information into the model.</p>
+						<p style="text-align: justify; font-size: 70%;"> - Positional encoding is summed with the embedding output.</p>
+						<img src="http://latex.codecogs.com/svg.latex?PE_(pos,2i) = \sin{(pos/10000^{(2i/d_{model})})}"/><br>
+						<img src="http://latex.codecogs.com/svg.latex?PE_(pos,2i+1) = \cos{(pos/10000^{(2i/d_{model})})}"/><br>
+						<img src="./images/positional_encoding.PNG" width="30%"> 
+
+					</section>
+					<section>
+						<h6>
+							Encoder Layers
+						</h6>
+						<img src="./images/encoder_layers.PNG">
+
+					</section>
+					
+					<section>
+						<h6>
+							Scale dot product attention
+						</h6>
+						<p>
+
+						</p>
+						<img src="http://latex.codecogs.com/svg.latex?Attention(Q,K,V)=softmax(\frac{QK^\top}{\sqrt{n}})*V"/><br>
+						<img src="./images/scale_dot_product_attention.PNG">
+					</section>
+					<section>
+						<h6>
+							Multi Head Attention
+						</h6>
+						<p style="text-align: justify; font-size: 70%;">
+							Multi-headed attention allows the model to jointly process
+							information from different representation subspaces at different positions.
+						</p>
+						<img src="./images/multi_head_formula.PNG">
+					</section>
+					<section>
+						<h6>
+							Position-wise fully connected feed-forward network
+						</h6>
+						<img src="./images/pos_fully_connected.PNG">
+					</section>
+					<section>
+						<h6>
+							Decoder layers
+						</h6>
+						<img src="./images/decoder_layers.PNG" style="left: 0%;">						 
+					</section>
+					<section>
+						<h6>
+							First bloc multi head attention
+						</h6>
+						<img src="./images/decode_sample1.PNG">
+						<p style="font-size: 60%; text-align: center;">
+							Cannot use the rest of the sentence to predict next token.<br>
+							Token "am" can't use "fine" to predict the next token, so it based only on the previous token("start, I, am") 
+						</p>
+					</section>
+					<section>
+						<h6>
+							Masked Scores
+						</h6>
+						<img src="./images/mask_multi_head.PNG">
+						<p style="font-size: 60%; text-align: center;">
+							Avoid tokens to predict from futur tokens of the sentence.
+						</p>
+					</section>
+
+					<section>
+						<h6>
+							Decoding animation
+						</h6>
+						<img src="./images/transformer_decoding_2.gif" style="right: 0%;">
+
+					</section>
+				</section>
+				
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				controls: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
